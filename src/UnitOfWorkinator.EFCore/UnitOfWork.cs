@@ -1,7 +1,8 @@
 using System.Collections.Concurrent;
 using Microsoft.EntityFrameworkCore;
+using UnitOfWorkinator.Abstractions;
 
-namespace UnitOfWorkinator;
+namespace UnitOfWorkinator.EFCore;
 
 internal class UnitOfWork<TContext>(TContext context, RepositoryMap repositoryMap) : IUnitOfWork where TContext : DbContext
 {

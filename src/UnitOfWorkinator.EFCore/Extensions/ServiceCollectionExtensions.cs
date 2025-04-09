@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using UnitOfWorkinator.Abstractions;
 
-namespace UnitOfWorkinator;
+namespace UnitOfWorkinator.EFCore;
 
 public static class ServiceCollectionExtensions
 {

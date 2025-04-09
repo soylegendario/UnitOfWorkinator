@@ -1,4 +1,4 @@
-namespace UnitOfWorkinator;
+namespace UnitOfWorkinator.Abstractions;
 
 public interface IUnitOfWork
 {

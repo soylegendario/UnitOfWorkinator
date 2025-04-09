@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkinator", "src\UnitOfWorkinator\UnitOfWorkinator.csproj", "{0AF1B46C-17A7-4C49-9861-ABC0DAC24E23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkinator.EFCore", "src\UnitOfWorkinator.EFCore\UnitOfWorkinator.EFCore.csproj", "{0AF1B46C-17A7-4C49-9861-ABC0DAC24E23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWorkinator.Abstractions", "src\UnitOfWorkinator.Abstractions\UnitOfWorkinator.Abstractions.csproj", "{13636712-D8AE-4B9A-8A3E-398F6E101BC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{0AF1B46C-17A7-4C49-9861-ABC0DAC24E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AF1B46C-17A7-4C49-9861-ABC0DAC24E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AF1B46C-17A7-4C49-9861-ABC0DAC24E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13636712-D8AE-4B9A-8A3E-398F6E101BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13636712-D8AE-4B9A-8A3E-398F6E101BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13636712-D8AE-4B9A-8A3E-398F6E101BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13636712-D8AE-4B9A-8A3E-398F6E101BC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

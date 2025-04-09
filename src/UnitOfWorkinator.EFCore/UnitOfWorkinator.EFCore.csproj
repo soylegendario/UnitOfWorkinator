@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>default</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Rafael León Pastor</Authors>
+        <Copyright>@2025</Copyright>
+        <PackageProjectUrl>https://github.com/soylegendario/UnitOfWorkinator</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/soylegendario/UnitOfWorkinator/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIcon>logo.png</PackageIcon>
+        <RepositoryUrl>https://github.com/soylegendario/UnitOfWorkinator</RepositoryUrl>
+        <PackageTags>ef efcore unitofwork uow data repository repositories</PackageTags>
+        <Description>Repositories on autopilot. Unit of Work without the paperwork.</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Version>1.0.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+      <PackageReference Include="UnitOfWorkinator.Abstractions" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\..\assets\logo.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+        <Link>logo.png</Link>
+      </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+            <Link>README.md</Link>
+        </None>
+    </ItemGroup>
+
+</Project>

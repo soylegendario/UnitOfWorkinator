@@ -1,4 +1,4 @@
-namespace UnitOfWorkinator;
+namespace UnitOfWorkinator.EFCore;
 
 internal class RepositoryMap(Dictionary<Type, Type> repositoryMap)
 {
