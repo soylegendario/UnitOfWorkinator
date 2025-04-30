@@ -26,12 +26,12 @@ Install-Package UnitOfWorkinator
 
 With UnitOfWorkinator, you only need to define your repositories. Here's how you can do it:
 ```csharp
-public interface IProductRepository : IRepository, IProductRepository
+public interface IProductRepository : BaseRepository, IProductRepository
 {
     // Your custom repository methods
 }
 
-public interface IOrderRepository : IRepository, IOrderRepository
+public interface IOrderRepository : BaseRepository, IOrderRepository
 {
     // Your custom repository methods
 }
