@@ -53,24 +53,26 @@ public class Startup
 }
 ```
 ### Using Repositories
-Once everything is set up, you can inject and use your repositories anywhere in your application:
+Once everything is set up, you can inject the UnitOfWork and use your repositories anywhere in your application:
 ```csharp
-public class MyService
+public class MyService(IUnitOfWork unitOfWork)
 {
-    private readonly IProductRepository _productRepository;
-    private readonly IOrderRepository _orderRepository;
-
-    public MyService(IProductRepository productRepository, IOrderRepository orderRepository)
-    {
-        _productRepository = productRepository;
-        _orderRepository = orderRepository;
-    }
+    private readonly IProductRepository _productRepository = unitOfWork.Repository<IProductRepository>();
+    private readonly IOrderRepository _orderRepository = unitOfWork.Repository<IOrderRepository>();
 
     public void DoSomething()
     {
         // Use your repositories here
         var products = _productRepository.GetAll();
         var orders = _orderRepository.GetAll();
+    }
+    
+    public async Task DoSomethingMore(int id)
+    {
+        // Use your repositories here
+        _productRepository.Delete(id);
+        // Use to save the changes in the unit of work
+        await unitOfWork.SaveChangesAsync();
     }
 }
 ```
