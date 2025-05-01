@@ -9,13 +9,13 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddUnitOfWorkinator<T>(this IServiceCollection services)
         where T : DbContext
     {
-        var repositoryMap = BuildRepositoryMap(services);
+        var repositoryMap = BuildRepositoryMap();
         services.AddSingleton(repositoryMap);
         services.AddScoped<IUnitOfWork, UnitOfWork<T>>();
         return services;
     }
     
-    private static RepositoryMap BuildRepositoryMap(IServiceCollection services)
+    private static RepositoryMap BuildRepositoryMap()
     {
         var baseInterface = typeof(IRepository);
         var result = new Dictionary<Type, Type>();
@@ -43,12 +43,6 @@ public static class ServiceCollectionExtensions
             }
         }
         
-        // Register the repositories with the DI container
-        foreach (var (interfaceType, implementationType) in result)
-        {
-            services.AddScoped(interfaceType, implementationType);
-        }
-
         return new RepositoryMap(result);
     }
 }
