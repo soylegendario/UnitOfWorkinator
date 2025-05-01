@@ -26,16 +26,32 @@ Install-Package UnitOfWorkinator
 
 With UnitOfWorkinator, you only need to define your repositories. Here's how you can do it:
 ```csharp
-public interface IProductRepository : BaseRepository, IProductRepository
+public interface IProductRepository : IProductRepository
 {
     // Your custom repository methods
 }
 
-public interface IOrderRepository : BaseRepository, IOrderRepository
+public interface IOrderRepository : IOrderRepository
 {
     // Your custom repository methods
 }
 ```
+### Implementing repositories
+For a multi-context application you must inject DbContext base class.
+
+For a single-context application you can inject the concrete DbContext implementation (not mandatory).
+```csharp
+public interface ProductRepository(DbContext context) : BaseRepository(context), IProductRepository
+{
+    // Implements the repository method
+}
+
+public interface IOrderRepository(DbContext context) : BaseRepository(context), IOrderRepository
+{
+    // Implements the repository method
+}
+```
+
 ### Configuring UnitOfWorkinator
 Now, configure UnitOfWorkinator to automatically discover and register your repositories:
 ```csharp
@@ -76,3 +92,4 @@ public class MyService(IUnitOfWork unitOfWork)
     }
 }
 ```
+Enjoy!
